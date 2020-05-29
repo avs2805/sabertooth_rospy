@@ -21,9 +21,9 @@ ROS node to control a diff-drive robot with a sabertooth motor controller with T
   $ catkin_make
   ```
 
-```
-
 ### To-Do
+
+---
 
 - [x] ROS node to subscribe to cmd_vel from teleop_twist_joy
 - [x] Convert cmd_vel to diff-drive velocities for each wheel
@@ -34,4 +34,3 @@ ROS node to control a diff-drive robot with a sabertooth motor controller with T
 - [x] launch file to launch teleop, cmd_vel conversion and sabertooth to motor comm
 - [ ] Code cleanup and commenting
 - [ ] README.md instructions
-```
