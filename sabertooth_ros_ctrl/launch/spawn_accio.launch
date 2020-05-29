@@ -1,5 +1,0 @@
-<launch>
-    <param name="robot_description" textfile="$(find sabertooth_ctrl)/urdf/accio_urdf.urdf" />
-    <include file="$(find gazebo_ros)/launch/empty_world.launch"></include>
-    <node name="my_spawn_accio" pkg="gazebo_ros" type="spawn_model" output= "screen" respawn="true" args="-param robot_description -urdf -model accio" />
-</launch>
