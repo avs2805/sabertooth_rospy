@@ -20,7 +20,7 @@ class cmd_vel_to_motors:
     4. main:        - prevents the Python Main thread from exiting.
 
     I've created a custom message TwoFloats for this purpose instead of creating two publishers
-    NOTE the math for forward kinematics is a work in progress
+    NOTE the speed to the sabertooth was tuned using the config params in teleop_twist_joy
     """
 
     def __init__(self):
