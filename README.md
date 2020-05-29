@@ -8,7 +8,18 @@ ROS node to control a diff-drive robot with a sabertooth motor controller with T
 
 - If you already have a catkin workspace : Clone this repo in the `/src` folder of your workspace. Build packages using `catkin_make`.
 
-- If you're creating a workspace for the first time, I'd suggest looking at ROS tutorials to create [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), [catkin_packages](http://wiki.ros.org/catkin/Tutorials/CreatingPackage) and [cloning packages from git](https://wiki.nps.edu/display/RC/Setting+up+a+ROS+package+from+Git)
+- If you're creating a workspace for the first time, I'd suggest taking a look at ROS tutorials to create [catkin workspaces](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), [catkin_packages](http://wiki.ros.org/catkin/Tutorials/CreatingPackage) and [cloning packages from git](https://wiki.nps.edu/display/RC/Setting+up+a+ROS+package+from+Git)
+
+Tl;dr
+
+```
+$ source /opt/ros/<ROS_DISTRO>/setup.bash
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ git clone <link to repo>
+$ cd ~/catkin_ws
+$ catkin_make
+```
 
 ### To-Do
 
