@@ -3,6 +3,7 @@
 import rospy
 from geometry_msgs.msg import Twist
 from sabertooth_ctrl.msg import TwoFloats
+from std_msgs.msg import Int32
 
 
 class cmd_vel_to_motors:
@@ -30,9 +31,14 @@ class cmd_vel_to_motors:
         )
 
         # create publisher for process motor commands
-        self.pub_motor_cmd = rospy.Publisher(
-            "motor_cmd", TwoFloats, queue_size=1)
-        self.cmd_msg = TwoFloats()  # object for custom message
+        # self.pub_motor_cmd = rospy.Publisher(
+        # "motor_cmd", TwoFloats, queue_size=1)
+        self.pub_motor_cmd_left = rospy.Publisher(
+            "motor_cmd_left", Int32, queue_size=1)
+        self.pub_motor_cmd_right = rospy.Publisher(
+            "motor_cmd_right", Int32, queue_size=1)
+
+        # self.cmd_msg = TwoFloats()  # object for custom message
 
         # constants (physical properties of the robot)
         self.WHEEL_RADIUS = 0.06096  # radius of wheels (meters)
@@ -58,10 +64,13 @@ class cmd_vel_to_motors:
         self.w_r = self.map_val(self.w_r, -3, 3, -20, 20)
         rospy.loginfo("mapped commands: w_l: %d, w_r:%d", self.w_l, self.w_r)
 
+        # arduino publisher
+        self.pub_motor_cmd_left.publish(self.w_l)
+        self.pub_motor_cmd_right.publish(self.w_r)
         # add values to cmd_msg and publish
-        self.cmd_msg.left = self.w_l
-        self.cmd_msg.right = self.w_r
-        self.pub_motor_cmd.publish(self.cmd_msg)
+        # self.cmd_msg.left = self.w_l
+        # self.cmd_msg.right = self.w_r
+        # self.pub_motor_cmd.publish(self.cmd_msg)
 
     def main(self):
         rospy.spin()
