@@ -32,5 +32,5 @@ ROS node to control a diff-drive robot with a sabertooth motor controller with T
 - [x] teleop_twist_joy tuning to get adequate speed on robot
 - [x] change linear and angular axis for driving robot
 - [x] launch file to launch teleop, cmd_vel conversion and sabertooth to motor comm
-- [ ] Code cleanup and commenting
+- [x] Code cleanup and commenting
 - [ ] README.md instructions
