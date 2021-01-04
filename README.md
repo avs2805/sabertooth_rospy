@@ -25,6 +25,8 @@ Tested with Xbox 360, Logitech F310 controllers
 ### Note
 Depending on your ubuntu setup, you may need to give read/write permissions to the port.
 This can be done by running `chmod +x /dev/tty<port>`. You may need to run this as root (sudo).
+
+
 If your user doesn't belong to the serial group, add user to the dialout group by running `sudo usermod -a -G dialout $USER`
 
 ### To-Do
