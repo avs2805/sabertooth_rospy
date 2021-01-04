@@ -4,8 +4,8 @@ ROS node to control a diff-drive robot with a sabertooth motor controller with T
 Tested with Xbox 360, Logitech F310 controllers
 
 ### Downloading and Running
-
 ---
+- Install pysabertooth (A required python library for this package). Run `python -m pip install pysabertooth`
 
 - If you already have a catkin workspace : Clone this repo in the `/src` folder of your workspace. Build packages using `catkin_make`.
 
@@ -21,6 +21,11 @@ Tested with Xbox 360, Logitech F310 controllers
   $ cd ~/catkin_ws
   $ catkin_make
   ```
+  
+### Note
+Depending on your ubuntu setup, you may need to give read/write permissions to the port.
+This can be done by running `chmod +x /dev/tty<port>`. You may need to run this as root (sudo).
+If your user doesn't belong to the serial group, add user to the dialout group by running `sudo usermod -a -G dialout $USER`
 
 ### To-Do
 
@@ -34,4 +39,5 @@ Tested with Xbox 360, Logitech F310 controllers
 - [x] change linear and angular axis for driving robot
 - [x] launch file to launch teleop, cmd_vel conversion and sabertooth to motor comm
 - [x] Code cleanup and commenting
-- [ ] README.md instructions
+- [x] README.md instructions
+- [ ] Udev instructions to rename device to appear as /dev/sabertooth 
