@@ -13,13 +13,13 @@ Tested with Xbox 360, Logitech F310 controllers
 
   TL;DR:
 
-  ```
-  $ source /opt/ros/<ROS_DISTRO>/setup.bash
-  $ mkdir -p ~/catkin_ws/src
-  $ cd ~/catkin_ws/src
-  $ git clone <link to repo>
-  $ cd ~/catkin_ws
-  $ catkin_make
+  ```bash
+  source /opt/ros/<ROS_DISTRO>/setup.bash
+  mkdir -p ~/catkin_ws/src
+  cd ~/catkin_ws/src
+  git clone <link to repo>
+  cd ~/catkin_ws
+  catkin_make
   ```
   
 ### Note
