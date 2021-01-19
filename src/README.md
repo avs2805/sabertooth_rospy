@@ -19,6 +19,7 @@ Tested with Xbox 360, Logitech F310 controllers
   cd ~/catkin_ws/src
   git clone <link to repo>
   cd ~/catkin_ws
+  rosdep install --from-paths src --ignore-src -r -y
   catkin_make
   ```
   
