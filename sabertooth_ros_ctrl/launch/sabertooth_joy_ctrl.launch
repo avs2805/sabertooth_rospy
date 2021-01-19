@@ -1,6 +1,5 @@
 <launch>
     <!-- launch teleop joy node -->
-    <!-- <include file="$(find teleop_twist_joy)/launch/teleop.launch" /> -->
     <arg name="joy_config" default="xbox" />
     <arg name="joy_dev" default="/dev/input/js0" />
     <arg name="config_filepath" default="$(find sabertooth_ctrl)/config/$(arg joy_config).config.yaml" />
@@ -21,5 +20,3 @@
     <!-- sabertooth node -->
     <node pkg="sabertooth_ctrl" name="sabertooth_control" type="sabertooth_node.py" output="screen"/>
 </launch>
-
-
