@@ -22,14 +22,13 @@ class SabertoothControl:
         self.vel = TwoFloats()
 
     def initialize_sabertooth(self):
-        # rospy.loginfo("\nInit sabertooth....\n")
         rospy.loginfo("Detecting sabertooth....\n")
         portlist = list(port.comports())
         # print portlist
         serial_port = ""
         try:
             for p in portlist:
-                print p
+                # print p
                 if "Sabertooth" in str(p):
                     serial_port = str(p).split(" ")
         except Exception as e:
@@ -65,6 +64,7 @@ class SabertoothControl:
 
 if __name__ == "__main__":
     rospy.init_node("sabertooth_driver")
+    # TODO: get sabertooth params from parameter server/launch file
     sc = SabertoothControl(saber_baudrate=9600,
                             saber_addr=128, saber_timeout=0.1)
 
