@@ -53,7 +53,7 @@ class cmd_vel_to_motors:
         )
         rospy.loginfo("calc commands: w_l: %d, w_r:%d", self.w_l, self.w_r)
 
-        # map values obtained above between [-70 , 70] out of [-127,127]
+        # map values obtained above between [-70 , 70] out of [-100,100]
         self.w_l = self.map_val(self.w_l, -3, 3, -20, 20)
         self.w_r = self.map_val(self.w_r, -3, 3, -20, 20)
         rospy.loginfo("mapped commands: w_l: %d, w_r:%d", self.w_l, self.w_r)
