@@ -5,7 +5,7 @@ from geometry_msgs.msg import Twist
 from sabertooth_ctrl.msg import TwoFloats
 
 
-class cmd_vel_to_motors:
+class CmdVelToMotors:
     """
     This class has 4 methods:
     1. __init__ :   - creates a subscriber for cmd_vel (published from teleop_twist_joy).
@@ -71,6 +71,6 @@ class cmd_vel_to_motors:
 
 
 if __name__ == "__main__":
-    rospy.init_node("cmd_vel_to_motors_convertor")
-    cmdvel = cmd_vel_to_motors()
+    rospy.init_node("CmdVelToMotors")
+    cmdvel = CmdVelToMotors()
     cmdvel.main()
