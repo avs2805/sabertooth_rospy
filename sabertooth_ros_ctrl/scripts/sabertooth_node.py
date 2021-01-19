@@ -7,7 +7,7 @@ import rospy
 from sabertooth_ctrl.msg import TwoFloats
 
 
-class sabertooth_control:
+class SabertoothControl:
     """
 
     """
@@ -65,7 +65,7 @@ class sabertooth_control:
 
 if __name__ == "__main__":
     rospy.init_node("sabertooth_driver")
-    sc = sabertooth_control(saber_baudrate=9600,
+    sc = SabertoothControl(saber_baudrate=9600,
                             saber_addr=128, saber_timeout=0.1)
 
     sc.initialize_sabertooth()
