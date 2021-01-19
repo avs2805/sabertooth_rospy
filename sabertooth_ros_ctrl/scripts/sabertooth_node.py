@@ -20,7 +20,6 @@ class sabertooth_control:
             "motor_cmd", TwoFloats, self.motor_cmd_cb, queue_size=1
         )
         self.vel = TwoFloats()
-        # self.rospy_rate rospy.Rate(60)
 
     def initialize_sabertooth(self):
         # rospy.loginfo("\nInit sabertooth....\n")
@@ -33,8 +32,6 @@ class sabertooth_control:
                 print p
                 if "Sabertooth" in str(p):
                     serial_port = str(p).split(" ")
-        # except IndexError as err:
-        #     rospy.logerr("Sabertooth MC not connected")
         except Exception as e:
             rospy.logerr(e)
 
@@ -55,6 +52,9 @@ class sabertooth_control:
         self.v_l = data.left
         self.v_r = data.right
         # rospy.loginfo("received commands: vl: %d, vr:%d", self.v_l, self.v_r)
+        # drive(number, speed)
+        # number: 1-2
+        # speed: -100 - 100
         self.saber.drive(1, self.v_l)
         self.saber.drive(2, self.v_r)
 
