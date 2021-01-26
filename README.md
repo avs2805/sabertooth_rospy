@@ -30,6 +30,11 @@ This can be done by running `chmod +x /dev/tty<port>`. You may need to run this 
 
 If your user doesn't belong to the serial group, add user to the dialout group by running `sudo usermod -a -G dialout $USER`
 
+# Update
+- Added teleop_twist_joy as package dependency in place of cloing a separate git submodule. Running a rosdep install mentioned in the TL;DR will install it.
+- Changed launch file to launch teleop specific parameters
+
+
 ### To-Do
 
 ---
